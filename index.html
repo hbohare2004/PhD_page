@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ph.D. Admission - NITTTR Bhopal</title>
+    <style>
+      /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    padding-top: 100px; /* Added top padding to ensure content doesn't overlap fixed header */
+    background-color: #f9f9f9;
+    min-height: 100vh; /* Ensures that the body takes at least the full height of the screen */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styling */
+header {
+    background-color: #001a4d;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .top-links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+header .top-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1em;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    position: fixed;
+}
+
+header .logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+header .menu {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .menu a {
+    color: rgb(3, 3, 3);
+    text-decoration: none;
+    padding: 10px;
+}
+
+.header-container {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: white;
+            border-bottom: 2px solid #ddd;
+        }
+
+        /* Logo Section */
+        .logo-section {
+            flex: 0 0 auto;
+        }
+
+        .logo-section img {
+            height: 80px; /* Adjust size */
+            width: auto;
+        }
+
+        /* Institute Details Section */
+        .institute-details {
+            margin-left: 10px;
+            flex: 1;
+        }
+
+        .institute-details h1 {
+            font-size: 18px;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .institute-details p {
+            font-size: 14px;
+            color: #444;
+            margin-top: 5px;
+        }
+
+        .institute-details p span {
+            color: red;
+            font-weight: bold;
+        }
+
+        /* Navigation Section */
+        nav {
+            margin-left: auto;
+        }
+
+ .menu {
+            display: flex;
+            justify-content: flex-end;
+            list-style: none;
+        }
+
+        .menu > li {
+            position: relative;
+            margin-left: 20px;
+        }
+
+        .menu > li > a {
+            text-decoration: none;
+            color: black;
+            padding: 10px 15px;
+            font-weight: bold;
+        }
+
+        .menu > li > a::after {
+            content: ""; /* Dropdown arrow */
+            font-size: 12px;
+            margin-left: 5px;
+        }
+
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            color: black;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            width: 200px;
+            border: 1px solid #000000;
+        }
+
+        .submenu li {
+            list-style: none;
+            border-bottom: 1px solid #ddd;
+            
+        }
+
+        .submenu li:last-child {
+            border-bottom: none;
+        }
+
+        .submenu li a {
+            text-decoration: none;
+            color: black;
+            padding: 10px 20px;
+            display: block;
+            font-size: 14px;
+        }
+
+        .submenu a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .menu > li:hover .submenu {
+            display: block;
+        }
+
+        /* Remove dropdown arrow for items without submenu */
+        .menu > li:not(:has(.submenu)) > a::after {
+            content: "";
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+
+/* Other Adjustments (Optional) */
+header .top-links, .menu {
+    display: flex;
+    justify-content: center;
+}
+
+header .top-links a, .menu a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1em;
+}
+
+footer {
+            background-color: #001a4d;
+            color: white;
+            padding: 20px;
+        }
+
+        footer .footer-section {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        footer .footer-section div {
+            flex: 1;
+            margin: 10px;
+            min-width: 200px;
+        }
+
+        footer h3 {
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        footer ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            margin-bottom: 5px;
+        }
+
+        footer ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer .contact-info p {
+            margin: 5px 0;
+        }
+
+        footer .contact-info a {
+            color: white;
+            text-decoration: none;
+        }
+
+
+
+aside {
+    background-color: #f7f7f7;
+    padding: 20px;
+}
+
+aside ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+aside ul li {
+    margin-bottom: 10px;
+}
+
+aside ul li a {
+    color: #001a4d;
+    text-decoration: none;
+}
+
+.phd-box {
+    width: 400px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    padding: 10px 20px;
+    position: relative;
+    margin: 20px auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Align content to the left */
+}
+
+.blue-line {
+    height: 5px;
+    background-color: #00274e; /* Blue Line */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.phd-box h2 {
+    color: #00274e;
+    font-size: 1.5em;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.phd-box h2::before {
+    content: "🔗";
+    margin-right: 8px;
+    font-size: 1.2em;
+}
+
+.phd-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.phd-box ul li {
+    border-bottom: 1px dashed #ccc;
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+}
+
+.phd-box ul li:last-child {
+    border-bottom: none;
+}
+
+.phd-box ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1em;
+}
+
+.phd-box ul li a.red {
+    color: red;
+    font-weight: bold;
+}
+
+.phd-box ul li::before {
+    content: "▶";
+    color: #333;
+    margin-right: 10px;
+    font-size: 0.9em;
+}
+
+.phd-box ul li a:hover {
+    text-decoration: underline;
+}
+
+.banner {
+    position: relative; 
+    text-align: center; 
+    color: rgb(255, 255, 255); 
+    font-size: 24px; 
+    background-image: url('nitttr.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    height: 200px; 
+    display: flex; 
+    align-items: center; 
+    filter:grayscale(30%) brightness(80%);
+    justify-content: center
+}
+.content h1 {
+            color: #001a4d;
+        }
+        .content h2 {
+            color : #001a4d;
+        }
+        .content h3 {
+            color : #001a4d;
+        }
+
+        .content .schools {
+            margin-top: 20px;
+        }
+
+        .content .schools h2 {
+            margin-top: 10px;
+        }
+
+        .content .schools ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .content .schools ul li {
+            margin-bottom: 5px;
+        }
+
+        aside {
+            background-color: #f7f7f7;
+            padding: 20px;
+        }
+
+        aside ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        aside ul li {
+            margin-bottom: 10px;
+        }
+
+        aside ul li a {
+            color: #001a4d;
+            text-decoration: none;
+        }
+
+</style>
+</head>
+<body>
+    
+    <header>
+        <div class="top-links">
+            <a href="#">VIRTUAL TOUR |  </a>
+            <a href="#">Email Login |  </a>
+            <a href="#">Jobs/Vacancy |</a>
+            <a href="#">ADMISSION |</a>
+            <a href="#">Tender/e-Tender/EOI |</a>
+            <a href="#">Employee Dashboard |</a>
+            <a href="#">MoU partners |</a>
+            <a href="#">Contact Us </a>
+        </div>
+
+
+    </header>
+
+
+
+<div class="header-container" padding-top: 102px;>
+ 
+
+    
+
+    <div class="logo-section">
+        <img src="logo.png" alt="Logo">
+    </div>
+    
+
+  
+    <nav >
+        <ul class="menu">
+            <li><a href="#home">HOME</a></li>
+            <li>
+                <a href="#about">ABOUT</a>
+                <ul class="submenu">
+                    <li ><a href="https://nitttrbpl.ac.in/about.php"style="color: black;">ABOUT NITTTR</a></li>
+                    <li><a href="https://nitttrbpl.ac.in/board-of-governors.php">BOARD OF GOVERNORS</a></li>
+                    <li><a href="https://nitttrbpl.ac.in/vision-mission.php">VISION & MISSION</a></li>
+                    <li><a href="https://nitttrbpl.ac.in/quality-policy.php">QUALITY POLICY</a></li>
+                    <li><a href="https://nitttrbpl.ac.in/governance-structure.php">GOVERNACE STRUCTURE</a></li>
+                    <li><a href="https://nitttrbpl.ac.in/committee.php">COMMITTEE</a></li>
+                    <li><a href="https://nitttrbpl.ac.in/facilities.php">FACILITIES</a></li>
+                    <li><a href="https://nitttrbpl.ac.in/how-to-reach.php">HOW TO REACH</a></li>
+                </ul>
+            </li>
+
+    <!-- Navigation Section -->
+    <nav>
+        <ul class="menu">
+            <!-- <li><a href="#home">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li> -->
+
+            <li>
+                <a href="#department">DEPARTMENT</a>
+                <ul class="submenu">
+                    <li><a href="#applied-sciences">Applied Sciences Education</a></li>
+                    <li><a href="#civil-eng">Civil & Environmental Engineering Education</a></li>
+                    <li><a href="#cs-eng">Computer Science and Engineering Education</a></li>
+                    <li><a href="#media-research">Media Research and Development Education</a></li>
+                    <li><a href="#eee">Electrical & Electronics Engineering Education</a></li>
+                    <li><a href="#management">Management Education</a></li>
+                    <li><a href="#mech-eng">Mechanical Engineering Education</a></li>
+                    <li><a href="#tech-voc">Technical & Vocational Education</a></li>
+                    <li><a href="#curriculum">Curriculum Development & Assessment</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#expertise">EXPERTISE</a>
+                <ul class="submenu">
+
+                    <li><a href="#area1">CURRICULUM DEVELOPMENT</a></li>
+                    <li><a href="#area2">LEARNING RESOURCE DEVELOPMENT</a></li>
+                    <li><a href="#area3">RESEARCH AND DEVELOPMENT</a></li>
+                    <li><a href="#area4">EXTENSION AND SERVICES</a></li>
+                    <li><a href="#area5">PROJECTS CARRIED OUT</a></li>
+                    <li><a href="#area1">Expertise Area 1</a></li>
+                    <li><a href="#area2">Expertise Area 2</a></li>
+                    <li><a href="#area3">Expertise Area 3</a></li>
+
+                </ul>
+            </li>
+            <li>
+                <a href="#clientele">CLIENTELE</a>
+                <ul class="submenu">
+
+                    <li><a href="#client1">ABOUT CLIENTELE</a></li>
+                    <li><a href="#client2">INTERNATIONAL</a></li>
+                    <li><a href="#client3">TECHNICAL EDUCATION SYSTEM</a></li>
+                    <li><a href="#client3">INDUSTRIES</a></li>
+                    <li><a href="#client3">FIELD AGENCIES</a></li>
+                    <li><a href="#client1">Client 1</a></li>
+                    <li><a href="#client2">Client 2</a></li>
+                    <li><a href="#client3">Client 3</a></li>
+
+                </ul>
+            </li>
+            <li>
+                <a href="#academic">ACADEMIC & TRAINING PROGRAMMES</a>
+                <ul class="submenu">
+
+                    <li><a href="#program1">Phd Programmes</a></li>
+                    <li><a href="#program2">PG PROGRAMME</a></li>
+                    <li><a href="#program3">PG DIPLOMA</a></li>
+                    <li><a href="#program3">SHORT PERM TRAINING PROGRAMMES</a></li>
+                    <li><a href="#program3">CENTRE FOR EXPERINETIAL LEARNING (CEL)</a></li>
+                    <li><a href="#program3">INTERNATIONAL TRAINING PROGRAMMES</a></li>
+
+                    <li><a href="#program1">Programme 1</a></li>
+                    <li><a href="#program2">Programme 2</a></li>
+                    <li><a href="#program3">Programme 3</a></li>
+
+                </ul>
+            </li>
+            <li>
+                <a href="#student-corner">STUDENT CORNER</a>
+                <ul class="submenu">
+
+                    <li><a href="#student-area1">APPRENTICE RELATED DETAILS</a></li>
+                    <li><a href="#student-area2">ADMISSION (CLICK HERE)</a></li>
+                    <li><a href="#student-area2">COE TRAINING PROGRAMME</a></li>
+                    <li><a href="#student-area2">INTERSHIP PROGRAMME</a></li>
+                    <li><a href="#student-area2">LAB FLYERS</a></li>
+
+                    <li><a href="#student-area1">Student Area 1</a></li>
+                    <li><a href="#student-area2">Student Area 2</a></li>
+
+                </ul>
+            </li>
+            <li>
+                <a href="#industry-corner">INDUSTRY CORNER</a>
+                <ul class="submenu">
+
+                    <li><a href="#industry1">CORPORATE AND INTERNATIONAL RELATIONS</a></li>
+
+                    <li><a href="#industry1">Industry Area 1</a></li>
+                    <li><a href="#industry2">Industry Area 2</a></li>
+
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+
+
+    <div class="banner">
+
+        <h2>Ph.D. Admission (Session: 2024-25)</h2>
+    </div>
+
+    <br>
+    <br>
+    <main style="display: flex;">
+        <div class="content" style="flex: 2;">
+            <h1 style="margin-left: 200px;">About Ph.D. Programmes</h1>
+            <br>
+            <br>
+            <p     style="margin-left: 100px;"
+            line-height: 24px;
+
+            ></p>
+            <p style="margin-left: 200px;"
+            line-height: 24px;
+    margin-bottom: 15px;
+            
+            >
+
+                National Institute of Technical Teachers' Training & Research Bhopal, Deemed to be a University under a distinct
+                <br> category, is committed to providing a transformative educational experience aligned with NEP 2020 guidelines. It 
+                <br>embraces a learner-centric approach with active participation. <b> The schools are offering interdisciplinary Ph.D. for in-</b>
+                <BR><b>service teachers, working professionals/ industry personnel, and enthusiastic learners for capacity building and to</b>
+                <br><b> enhance their professional skills.</b>
+            </p>
+
+            <div class="schools">
+                <h2 style="margin-left: 200px;">The university comprises the following Schools:</h2>
+                <br>
+                <h3 style="margin-left: 200px;">School of Sciences:</h3>
+                <br>
+                <ul>
+
+                    <li style="margin-left: 200px;">i. Department of Applied Science Education </li>
+                    <li style="margin-left: 200px;"> (Physics, Chemistry, Mathematics)</li>
+                </ul>
+
+                <br>
+                <h3 style="margin-left: 200px;">School of Engineering & Technology:</h3>
+                <br>
+                <ul>
+                    <li style="margin-left: 200px;">i. Department of Civil & Environmental Engineering Education</li>
+                    <br>
+                    <li style="margin-left: 200px;">ii. Department of Computer Science and Engineering Education</li>
+                    <br>
+                    <li style="margin-left: 200px;">iii. Department of Electrical & Electronics Engineering Education</li>
+                    <br>
+                    <li style="margin-left: 200px;">iv. Department of Mechanical Engineering Education</li>
+                </ul>
+                <br>
+                <h3 style="margin-left: 200px;">School of Management Studies:</h3>
+                <br>
+                <ul>
+                    <li style="margin-left: 200px;">i. Department of Management Education</li>
+                </ul>
+                <br>
+
+                <h3 style="margin-left: 200px;">School of Creative Education and Liberal Arts:</h3>
+                <br>
+                <ul>
+                    <li style="margin-left: 200px;">i. Department of Curriculum Development and Assessment Education</li>
+                    <br>
+                    <li style="margin-left: 200px;">ii. Department of Media Research and Development Education</li>
+                    <br>
+                    <li style="margin-left: 200px;">iii. Department of Technical Vocational Education & Research</li>
+                    <br>
+                </ul>
+            </div>
+        </div>
+
+        <aside style="flex: 1;">
+            <div class="phd-box">
+                <div class="blue-line"></div>
+                <h2>Ph.D. Application</h2>
+                <ul>
+                    <li><a href="#">About Ph.D. Programmes</a></li>
+                    <li><a href="#">Admission Procedure</a></li>
+                    <li><a href="#">Fellowship</a></li>
+                    <li><a href="#">Fees Structure</a></li>
+                    <li><a href="#">Research Area</a></li>
+                    <li><a href="#" class="red">Important Dates</a></li>
+                    <li><a href="#" class="red">Apply Now</a></li>
+                    <li><a href="#">Hostel Accommodation</a></li>
+                    <li><a href="#">Contact Details</a></li>
+                    <li><a href="#" class="red">Syllabus for Category 2</a></li>
+                    <li><a href="#">Ph.D. Ordinance (Coming Soon)</a></li>
+                </ul>
+
+
+
+
+
+
+            <!-- </div>
+            <ul>
+                <h1 >Ph.D. Application</h1>
+                <li><a href="#">About Ph.D. Programmes</a></li>
+                <li><a href="#">Seat Matrix</a></li>
+                <li><a href="#">Admission Procedure</a></li>
+                <li><a href="#">Fellowship</a></li>
+                <li><a href="#">Fees Structure</a></li>
+                <li><a href="#">Research Area</a></li>
+                <li><a href="#">Important Dates</a></li>
+                <li><a href="#">Hostel Accommodation</a></li>
+                <li><a href="#">Contact Details</a></li>
+                <li><a href="#">E-Brochure</a></li>
+                <li><a href="#">Syllabus for Category 3</a></li>
+                <li><a href="#">Ph.D. Entrance Examination Details</a></li>
+                <li><a href="#">Ph.D. Ordinance</a></li>
+
+            </ul> -->
+
+        </aside>
+
+    </main>
+
+    <footer>
+        <div class="footer-section">
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Pension Corner</a></li>
+                    <li><a href="#">Photo Gallery</a></li>
+                    <li><a href="#">Tenders / Notice</a></li>
+                    <li><a href="#">Women Cell</a></li>
+                    <li><a href="#">Internal Complaint Committee</a></li>
+                    <li><a href="#">Extension Centres</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Annual Report</a></li>
+                    <li><a href="#">SC/ST/OBC/PWD/Minority Cell</a></li>
+                    <li><a href="#">AICTE Related</a></li>
+                    <li><a href="#">CALENDAR 2024-2025</a></li>
+                    <li><a href="#">Weather Report by NITTTR Bhopal</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Important Links</h3>
+                <ul>
+                    <li><a href="#">Online Skill Test for All Students</a></li>
+                    <li><a href="#">CDTP Scheme</a></li>
+                    <li><a href="#">Other NITTTR's</a></li>
+                    <li><a href="#">Articles</a></li>
+                    <li><a href="#">RTI</a></li>
+                    <li><a href="#">Policy</a></li>
+                    <li><a href="#">Minutes of the Meeting</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Contact Us</h3>
+                <div class="contact-info">
+                    <p>National Institute of Technical Teachers' Training & Research</p>
+                    <br>
+                    <p>Shamla Hills, Bhopal - 462002 (M.P.), India</p>
+                    <br>
+                    <p>Telephone: 91(0755)2661600-602</p>
+                    <p>Telephone: 607-608</p>
+                    <br> 
+                    <p>Email: <a href="mailto:director@nitttrbpl.ac.in">director@nitttrbpl.ac.in</a></p>
+                    <p>Web: <a href="http://www.nitttrbpl.ac.in">www.nitttrbpl.ac.in</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
